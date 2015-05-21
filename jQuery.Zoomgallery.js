@@ -131,7 +131,7 @@
 
 				$currentImage.removeClass('zoomed');
 
-				that.slideImages($currentImage, $nextImage, '100%');
+				that.slideImages($zoomgallery, $currentImage, $nextImage, '100%');
 			});
 
 			$previousButtons.on('click', function(e) {
@@ -157,10 +157,10 @@
 
 				$currentImage.removeClass('zoomed');
 
-				that.slideImages($currentImage, $previousImage, '-100%');
+				that.slideImages($zoomgallery, $currentImage, $previousImage, '-100%');
 			});
 		},
-		slideImages: function($currentImage, $nextImage, side) {
+		slideImages: function($zoomgallery, $currentImage, $nextImage, side) {
 			$nextImage.children('.zoomgallery-image').css('backgroundImage', 'url("' + $nextImage.children('.zoomgallery-image').data('image') + '")');
 
 			var slideCallback = function() {
@@ -176,7 +176,7 @@
 					left: side,
 					width: '100%',
 					top: 0,
-					height: $nextImage.closest('.zoomgallery').css('height'),
+					height: $zoomgallery.css('height'),
 					zIndex: 11
 				})
 				.addClass('zoomed')
