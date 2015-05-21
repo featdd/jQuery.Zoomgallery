@@ -1,0 +1,65 @@
+.zoomgallery {
+  height: 500px;
+
+  .zoomgallery-inner {
+    height: 100%;
+    position: relative;
+    width: 100%;
+  }
+
+  .zoomgallery-item {
+    position: absolute;
+    z-index: 1;
+
+    .zoomgallery-image {
+      background-position: center;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+  }
+
+  .zoomgallery-open {
+    bottom: 5%;
+    color: #fff;
+    font-size: 1.3em;
+    position: absolute;
+    right: 5%;
+  }
+
+  .zoomgallery-menu {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+
+    .next,
+    .close,
+    .previous {
+      font-size: 3em;
+      position: absolute;
+
+      a {
+        color: #fff;
+      }
+
+    }
+
+    .next,
+    .previous {
+      top: 45%;
+    }
+
+    .next {
+      right: 15px;
+    }
+
+    .previous {
+      left: 15px;
+    }
+    .close {
+      right: 15px;
+      top: 5px;
+    }
+  }
+}
