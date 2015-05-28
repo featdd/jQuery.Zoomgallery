@@ -1,3 +1,5 @@
+$white: #fff;
+
 .zoomgallery {
   height: 500px;
 
@@ -5,6 +7,7 @@
     height: 100%;
     position: relative;
     width: 100%;
+    overflow: hidden;
   }
 
   .zoomgallery-item {
@@ -22,7 +25,7 @@
 
   .zoomgallery-open {
     bottom: 5%;
-    color: #fff;
+    color: $white;
     font-size: 1.3em;
     position: absolute;
     right: 5%;
@@ -40,7 +43,7 @@
       position: absolute;
 
       a {
-        color: #fff;
+        color: $white;
       }
 
     }

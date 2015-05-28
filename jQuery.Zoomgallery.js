@@ -1,6 +1,5 @@
-'use strict';
-
-;(function ( $, window, document, undefined ) {
+(function ( $, window, document, undefined ) {
+	'use strict';
 
 	var pluginName = 'Zoomgallery',
 			defaults = {};
