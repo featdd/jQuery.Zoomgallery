@@ -5,9 +5,9 @@ $white: #fff;
 
   .zoomgallery-inner {
     height: 100%;
+    overflow: hidden;
     position: relative;
     width: 100%;
-    overflow: hidden;
   }
 
   .zoomgallery-item {
@@ -60,6 +60,7 @@ $white: #fff;
     .previous {
       left: 15px;
     }
+
     .close {
       right: 15px;
       top: 5px;

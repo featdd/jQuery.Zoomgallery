@@ -33,7 +33,13 @@
 			});
 
 			$zoomgallery.find('.zoomgallery-item').each(function() {
-				$(this).children('.zoomgallery-image').css('backgroundImage', 'url("' + $(this).children('.zoomgallery-image').data('thumbnail') + '")');
+				var $image = $(this).children('.zoomgallery-image');
+
+				if (!$image.attr('data-thumbnail') || '' === $image.data('thumbnail')) {
+					$image.css('backgroundImage', 'url("' + $image.data('image') + '")');
+				} else {
+					$image.css('backgroundImage', 'url("' + $image.data('thumbnail') + '")');
+				}
 
 				$(this).data('style', {
 					left: (parseFloat($(this).css('left')) * 100 / parseFloat($zoomgallery.css('width')) + '%'),
