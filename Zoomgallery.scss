@@ -36,30 +36,20 @@ $white: #fff;
     width: 100%;
     z-index: 0;
 
+    a {color: $white;}
+
     .next,
     .close,
     .previous {
       font-size: 3em;
       position: absolute;
-
-      a {
-        color: $white;
-      }
-
     }
 
     .next,
-    .previous {
-      top: 45%;
-    }
+    .previous {top: 45%;}
 
-    .next {
-      right: 15px;
-    }
-
-    .previous {
-      left: 15px;
-    }
+    .next {right: 15px;}
+    .previous {left: 15px;}
 
     .close {
       right: 15px;

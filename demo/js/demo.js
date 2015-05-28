@@ -1,5 +1,7 @@
-'use strict';
+(function( $ ) {
+	'use strict';
 
-$(window).load(function() {
-	$('.zoomgallery').Zoomgallery();
-});
+	$(window).load(function() {
+		$('.zoomgallery').Zoomgallery();
+	});
+})( jQuery );
