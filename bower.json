@@ -2,7 +2,9 @@
   "name": "jQuery.Zoomgallery",
   "main": "jQuery.Zoomgallery.min.js",
   "version": "1.0.0",
-  "ignore": [".jshintrc"],
+  "ignore": [
+    ".jshintrc"
+  ],
   "dependencies": {
     "jquery": "^2.1.4"
   }
