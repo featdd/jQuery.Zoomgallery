@@ -6,6 +6,7 @@
     ".jshintrc"
   ],
   "dependencies": {
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "jQuery.SimpleSwipe.js": "~1.0.1"
   }
 }

@@ -167,57 +167,15 @@
 				that.slideImages($zoomgallery, $currentImage, $previousImage, '-100%');
 			});
 
-			var TouchStart = false;
-			var Once = false;
-			var Touch = {};
-
-			var swipeInfo = function(e) {
-				Touch.end = e.originalEvent.pageX || e.originalEvent.touches[0].pageX;
-
-				var direction;
-
-				if (that.settings.minMove < (Math.abs(Touch.start - Touch.end))) {
-					direction = ( Touch.end > Touch.start ) ? 'right' : 'left';
-				} else {
-					direction = 'none';
+			$zoomgallery.swipe(function(direction) {
+				if ('left' === direction) {
+					$nextButtons.trigger('click');
 				}
 
-				return {
-					direction: direction,
-					offset: Touch.end - Touch.start
-				};
-			};
-
-			$zoomgallery.on('touchstart mousedown', function(e) {
-				TouchStart = true;
-				Once = true;
-				Touch = {
-					start: e.originalEvent.pageX || e.originalEvent.touches[0].pageX,
-					end: 0
-				};
-			});
-
-			$zoomgallery.on('touchend mouseup', function() {
-				TouchStart = false;
-			});
-
-			$zoomgallery.on('touchmove mousemove', function(e) {
-				if (false === TouchStart) {return;}
-
-				var Swipe = swipeInfo(e);
-
-				if (true === Once) {
-					if ('left' === Swipe.direction) {
-						$nextButtons.trigger('click');
-						Once = false;
-					}
-
-					if ('right' === Swipe.direction) {
-						$previousButtons.trigger('click');
-						Once = false;
-					}
+				if ('right' === direction) {
+					$previousButtons.trigger('click');
 				}
-			});
+			}, that.settings.minMove);
 		},
 		slideImages: function($zoomgallery, $currentImage, $nextImage, side) {
 			$nextImage.children('.zoomgallery-image').css('backgroundImage', 'url("' + $nextImage.children('.zoomgallery-image').data('image') + '")');
